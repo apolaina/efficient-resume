@@ -1,0 +1,28 @@
+// light 300 / regular 400 / medium 500 / semi-bold 600 / bold 700 / extra-bold 800
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans")
+
+body
+  background-color #253146
+  font-family 'Work Sans', sans-serif
+  .header
+    display flex
+    align-items baseline
+    &__title
+      color #f9ced5
+      font-weight 800
+      font-size 5vmin
+    &__menu
+      display flex
+      justify-content space-between
+      flex-grow 1
+      font-weight 800
+      &:before
+      &:after
+        content ''
+        display block
+      &__item
+        color #f9ced5
+        &--active
+          text-decoration underline
+        &--sayhi
+          color #f8ffe5
