@@ -16,6 +16,16 @@
     height 5vmin
     line-height 5vmin
     transition all 0.3s ease-in
+    &__close
+      display none
+      position absolute
+      top 0
+      right 0
+      font-size 5vmax
+      font-weight 100
+      padding 5vmax
+      color #253146
+      cursor pointer
     &__btn
       display none
       background url("src/assets/nav.png") no-repeat
@@ -38,10 +48,13 @@
 
 @media screen and (max-width: 900px)
   .header
+    position relative
     &__title
      font-size 5vmax
      height auto
     &__menu
+      position absolute
+      right 0
       height auto
       line-height initial
       align-items center
@@ -54,6 +67,9 @@
         background #f9ced5
         cursor initial
         .header__menu
+          position relative
+          &__close
+            display flex
           &__btn
             display none
           &__links
@@ -72,3 +88,6 @@
         margin-left auto
       &__links
         display none
+
+  .header--open
+    position initial

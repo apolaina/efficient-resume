@@ -8,9 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Alice POLAINA';
 
-  toggleMenu(): void {
-    console.log( 'hello' );
-    let elem = document.querySelector('.header__menu');
-    elem.className += ' header__menu--open';
+  openMenu(): void {
+    console.log( 'openMenu' );
+    let elemParent = document.querySelector('.header');
+    let elemChild = document.querySelector('.header__menu');
+    elemChild.classList.add('header__menu--open');
+    elemParent.classList.add('header--open');
+  }
+
+  closeMenu(): void {
+    console.log( 'closeMenu' );
+    let elemParent = document.querySelector('.header');
+    let elemChild = document.querySelector('.header__menu');
+    elemChild.classList.remove('header__menu--open');
+    elemParent.classList.remove('header--open');
   }
 }
