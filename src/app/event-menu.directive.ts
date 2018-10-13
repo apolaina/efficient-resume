@@ -25,6 +25,16 @@ export class EventMenuDirective implements OnInit {
     elemParent.classList.remove('header--open');
   }
 
+  hasClass(elem: Element, className: string): boolean {
+    let hasClass = false;
+    elem = <Element>elem;
+
+    if( RegExp(className).test(elem.className) ) {
+      hasClass = true;
+    }
+    return hasClass; 
+  }
+
   ngOnInit(): void {
 
     console.log( 'isOpen onInit', this.isOpen );
@@ -36,8 +46,20 @@ export class EventMenuDirective implements OnInit {
 
       this.isOpen = elemParent.classList.contains('header--open') && elemChild.classList.contains('header__menu--open');
 
-      console.log( 'isOpen click', this.isOpen );
+      console.log( !(this.hasClass(this.elRef.nativeElement, 'header__menu__btn') || this.hasClass(this.elRef.nativeElement, 'header__menu__close')))
 
+      // Manage the --active class
+      if( !(this.hasClass(this.elRef.nativeElement, 'header__menu__btn') || this.hasClass(this.elRef.nativeElement, 'header__menu__close')) ){
+        // Remove --active class of old element
+        let oldActiveElement: Element = document.querySelector('.header__menu__links__item--active');
+        oldActiveElement.classList.remove('header__menu__links__item--active');
+  
+        // Add --active class of current element
+        let currentActiveElementParent = this.renderer.parentNode(this.elRef.nativeElement);
+        this.renderer.addClass(currentActiveElementParent, 'header__menu__links__item--active');
+      }
+
+      // Manage the opening/closing of the menu
       if(this.isOpen) {
         this.closeMenu();
         this.isOpen = false;
