@@ -1,8 +1,8 @@
 div.header
   div.header__title {{ title }}
   div.header__menu
-    div.header__menu__close((click)="closeMenu()") X
-    div.header__menu__btn((click)="openMenu()")
+    div.header__menu__close(appEventMenu) X
+    div.header__menu__btn(appEventMenu)
     div.header__menu__links
       div(class="header__menu__links__item header__menu__links__item--active")
         a(routerLink="/about-me", appEventMenu) About me
