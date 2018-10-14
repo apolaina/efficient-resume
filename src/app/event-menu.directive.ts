@@ -64,7 +64,7 @@ export class EventMenuDirective implements OnInit {
         this.closeMenu();
         this.isOpen = false;
         console.log( 'removeClass' );
-      } else {
+      }else{
         this.openMenu();
         this.isOpen = true;
         console.log( 'addClass' );
