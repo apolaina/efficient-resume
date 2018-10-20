@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Purposes
 
-This project was created to try my hand about Angular 6 and enjoy.
+This project was created to try my hand on Angular 6 and enjoy.
 It also aims to promote my skills online ;).
 
 
