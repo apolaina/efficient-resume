@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { EventMenuDirective } from './event-menu.directive';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
-    EventMenuDirective
+    EventMenuDirective,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

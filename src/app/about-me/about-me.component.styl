@@ -1,5 +1,35 @@
+font-size(s)
+  font-size "calc(12px + %s)" % s
+
 .content__about-me
+  display flex
+  justify-content space-between
+  align-items center
   background-image url("/src/assets/slash.png")
   border-top 1px dashed #253146
   margin-top 5vmin
-  height 200px
+  padding 0 5vmin
+  &--left
+    display flex
+    align-items center
+    width 30%
+    img
+      width 80%
+  &--right
+    width 70%
+    p
+      font-size 2vmin
+      font-weight 200
+      color #253146
+      background-color white
+      text-align justify
+  a
+    text-decoration none
+    border-bottom 1px dashed #FAA916
+    &:visited
+      color #253146
+    &:hover
+      color #FAA916
+
+// @media screen and (max-width: 768px)
+

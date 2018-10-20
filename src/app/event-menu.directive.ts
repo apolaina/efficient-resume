@@ -3,11 +3,17 @@ import { Directive, OnInit, Renderer2, ElementRef } from '@angular/core';
 @Directive({
   selector: '[appEventMenu]'
 })
+
 export class EventMenuDirective implements OnInit {
 
-  constructor(private renderer: Renderer2, private elRef: ElementRef) { }
-
   private isOpen = false;
+  private renderer: Renderer2;
+  private elRef: ElementRef;
+  
+  constructor(renderer: Renderer2, elRef: ElementRef) {
+    this.renderer = renderer;
+    this.elRef = elRef;
+  }
 
   openMenu(): void {
     // console.log( 'openMenu' );
@@ -40,6 +46,8 @@ export class EventMenuDirective implements OnInit {
     console.log( 'isOpen onInit', this.isOpen );
 
     this.renderer.listen(this.elRef.nativeElement, 'click', () => {
+
+      // https://github.com/angular/angular/issues/19554
 
       let elemParent: Element = document.querySelector('.header');
       let elemChild: Element = document.querySelector('.header__menu');
