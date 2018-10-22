@@ -10,8 +10,8 @@ font-size(s)
   &__title
     color #f9ced5
     font-weight 800
-    font-size 5vmin
-    margin-right 15vmin
+    font-size 4vmin
+    margin-right 10vmin
     height 5vmin
   &__menu
     display flex
@@ -64,7 +64,7 @@ font-size(s)
       align-items center
       &--open
         width 100%
-        height calc(100vh - 0px)
+        min-height calc(100vh - 0px)
         position absolute
         top 0
         left 0
@@ -81,7 +81,7 @@ font-size(s)
             align-items center
             flex-direction column
             justify-content center
-            height 100%
+            min-height calc(100vh - 0px)
             font-size 5vmin
             font-weight 800
             line-height 25vmin

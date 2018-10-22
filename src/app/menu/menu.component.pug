@@ -15,13 +15,13 @@
 //- router-outlet
 
 //- Using ngClass (making the directive unnecessary)
-div([ngClass]="open ? 'header--open' : 'header'")
+div([ngClass]="open ? 'header--open' : 'header'" appEventMenu="open ? 'header--open' : 'header'")
   div.header__title {{ title }}
   div([ngClass]="open ? 'header__menu--open' : 'header__menu'")
     div.header__menu__close((click)="open=!open") X
     div.header__menu__btn((click)="open=!open")
     div.header__menu__links
-      div(class="header__menu__links__item header__menu__links__item--active")
+      div.header__menu__links__item(routerLinkActive="header__menu__links__item--active")
         a(routerLink="/about-me") About me
       div.header__menu__links__item Skills
       div.header__menu__links__item Work experience
