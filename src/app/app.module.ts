@@ -6,13 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { EventMenuDirective } from './event-menu.directive';
 import { MenuComponent } from './menu/menu.component';
+import { SkillsComponent } from './skills/skills.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutMeComponent,
     EventMenuDirective,
-    MenuComponent
+    MenuComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

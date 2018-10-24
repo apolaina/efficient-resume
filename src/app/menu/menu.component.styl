@@ -41,11 +41,13 @@ font-size(s)
       justify-content space-between
       flex-grow 1
       &__item
-        color #f9ced5
         &--active
           border-bottom 1px dashed #f9ced5
-        &--sayhi
-          color #f8ffe5
+          &:last-child
+             border-bottom 1px dashed #f8ffe5
+        &:last-child
+          a
+            color #f8ffe5
         a
           color #f9ced5
           text-decoration none

@@ -7,11 +7,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  title = 'Alice POLAINA';
+  menus = [
+    {
+      name: 'About me',
+      link: '/about-me'
+    },
+    {
+      name: 'Skills',
+      link: '/skills'
+    },
+    {
+      name: 'Work experience',
+      link: '/skills'
+    },
+    {
+      name: 'Education',
+      link: '/skills'
+    },
+    {
+      name: 'Say hi!',
+      link: '/skills'
+    }
+  ];
+
+  constructor() {}
 
   ngOnInit() {
   }
-
-  title = 'Alice POLAINA';
 
 }

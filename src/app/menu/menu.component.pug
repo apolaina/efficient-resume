@@ -21,9 +21,5 @@ div([ngClass]="open ? 'header--open' : 'header'" appEventMenu="open ? 'header--o
     div.header__menu__close((click)="open=!open") X
     div.header__menu__btn((click)="open=!open")
     div.header__menu__links
-      div.header__menu__links__item(routerLinkActive="header__menu__links__item--active")
-        a(routerLink="/about-me") About me
-      div.header__menu__links__item Skills
-      div.header__menu__links__item Work experience
-      div.header__menu__links__item Education
-      div(class="header__menu__links__item header__menu__links__item--sayhi") Say hi!
+      div.header__menu__links__item(*ngFor="let menu of menus" routerLinkActive="header__menu__links__item--active")
+        a(routerLink="{{ menu.link }}") {{ menu.name }}
