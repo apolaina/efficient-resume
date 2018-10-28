@@ -15,11 +15,11 @@
 //- router-outlet
 
 //- Using ngClass (making the directive unnecessary)
-div([ngClass]="open ? 'header--open' : 'header'" appEventMenu="open ? 'header--open' : 'header'")
+div([ngClass]="open ? 'header--open' : 'header'")
   div.header__title {{ title }}
   div([ngClass]="open ? 'header__menu--open' : 'header__menu'")
     div.header__menu__close((click)="open=!open") X
     div.header__menu__btn((click)="open=!open")
     div.header__menu__links
-      div.header__menu__links__item(*ngFor="let menu of menus" routerLinkActive="header__menu__links__item--active")
+      div.header__menu__links__item((click)="clickMenuMobile(open)")(*ngFor="let menu of menus" routerLinkActive="header__menu__links__item--active")
         a(routerLink="{{ menu.link }}") {{ menu.name }}

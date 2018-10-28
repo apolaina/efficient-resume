@@ -65,13 +65,14 @@ font-size(s)
       line-height initial
       align-items center
       &--open
+        position fixed
         width 100%
-        min-height calc(100vh - 0px)
-        position absolute
+        height 100%
         top 0
         left 0
         background #f9ced5
         cursor initial
+        z-index 1
         .header__menu
           position relative
           &__close
@@ -86,7 +87,7 @@ font-size(s)
             min-height calc(100vh - 0px)
             font-size 5vmin
             font-weight 800
-            line-height 25vmin
+            line-height 18vmin
             &__item
               color #253146
               &--active

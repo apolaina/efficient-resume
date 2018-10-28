@@ -6,17 +6,19 @@ import { Directive, HostListener, OnInit, Input } from '@angular/core';
 
 export class EventMenuDirective implements OnInit {
 
-  constructor() {
-  }
+  private headerOpen: Element;
+  private headerMenuOpen: Element;
+
+  constructor() {}
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
 
-    let headerOpen = document.querySelector('.header--open');
-    let headerMenuOpen = document.querySelector('.header__menu--open');
+    this.headerOpen =  document.querySelector('.header--open');
+    this.headerMenuOpen = document.querySelector('.header__menu--open');
 
-    if (event.target.innerWidth > 980 && headerOpen !== null && headerMenuOpen !== null) {
-      this.closeMenu(headerOpen, headerMenuOpen);
+    if (event.target.innerWidth > 980 && this.headerOpen !== null && this.headerMenuOpen !== null) {
+      this.closeMenu(this.headerOpen, this.headerMenuOpen);
     }
   }
 
@@ -32,10 +34,10 @@ export class EventMenuDirective implements OnInit {
     let hasClass = false;
     elem = <Element>elem;
 
-    if( RegExp(className).test(elem.className) ) {
+    if ( RegExp(className).test(elem.className) ) {
       hasClass = true;
     }
-    return hasClass; 
+    return hasClass;
   }
 
   ngOnInit(): void {}
